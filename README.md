@@ -36,7 +36,7 @@
     #eg. your_phone_number = "+17786980085"
     your_phone_number = ""
     ```
-6.  Run autoRegister.py using your text editor or IDE or run in the terminal
+6.  Run autoRegister.py using your text editor/IDE or run this command
     ```
     python autoRegister.py
     ```
