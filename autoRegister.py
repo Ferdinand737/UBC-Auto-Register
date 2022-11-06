@@ -1,13 +1,3 @@
-#This code will automatically register the user in classes at UBC by checking availability every 15 minutes and registering if there is a spot available
-#After registering in a course the program will send a text to the phone number assigned to 'your_phone_number'
-#If the device running this code goes to sleep, the program will stop running (at least it did on my laptop).
-#This code requires chromedriver to work
-#Chromedriver can be downloaded here https://chromedriver.chromium.org/downloads
-#Chromedriver must be the same version as chrome on your device
-#Packages can be installed with pip
-    #pip install selenium
-    #pip install twilio
-
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException   
 from selenium.webdriver.common.by import By
@@ -17,15 +7,21 @@ from twilio.rest import Client
 #List of classes you want to register in
 #eg. classes = ['COSC 315 101','COSC 360 001','COSC 414 001', 'COSC 360 L02']
 classes = []
+
 #campus wide login
+#eg. cwl = "ljohnson"
+#eg. pwd = "verySecurePassword"
 cwl = ""
 pwd = ""
+
 #make an account at twilio.com
 #free trial has enough texts
 twilio_account = ""
 twilio_token = ""
+
 #eg. twilio_phone_number = "+17786981234"
 twilio_phone_number = ""
+
 #eg. your_phone_number = "+17786980085"
 your_phone_number = ""
 
