@@ -22,7 +22,7 @@
     classes = []
 
     #campus wide login
-    #eg. cwl = "ljohnson"
+    #eg. cwl = "jsmith"
     #eg. pwd = "verySecurePassword"
     cwl = ""
     pwd = ""
