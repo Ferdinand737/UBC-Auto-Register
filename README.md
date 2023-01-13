@@ -13,7 +13,7 @@
     ```
 3. Download the correct version of chromedriver for your system [here](https://chromedriver.chromium.org/downloads).
     * Chromedriver must the the same version as chrome on your device
-    * Windows chromedriver is included in this repository
+    * Windows chromedriver is included in this repository (may be outdated)
 4. Make a free twilio account [here](https://www.twilio.com/)
 5. Edit these values in autoRegister.py with a text editor of your choice
     ```
