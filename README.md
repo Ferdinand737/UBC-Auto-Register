@@ -1,4 +1,4 @@
-# UBC-Auto_Register
+# UBC-Auto-Register
 ## Automatically registers the user in classes at UBC
 
 ## How to run this code
