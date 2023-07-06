@@ -22,7 +22,7 @@
 <br>
 
 1. Edit these values in autoRegister.py with a text editor of your choice
-
+    ```
     #List of classes you want to register in
     #eg. classes = ['COSC 315 101','SPAN 202 001', 'COSC 360 L02']
     classes = []
