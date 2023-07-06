@@ -6,13 +6,13 @@ from twilio.rest import Client
 
 #List of classes you want to register in
 #eg. classes = ['COSC 315 101','COSC 360 001','COSC 414 001', 'COSC 360 L02']
-classes = ['COSC 499 001', 'COSC 305 L02']
+classes = []
 
 #campus wide login
 #eg. cwl = "ljohnson"
 #eg. pwd = "verySecurePassword"
-cwl = "fhaaben"
-pwd = "H%xp'>67FQnZkPU;"
+cwl = ""
+pwd = ""
 
 #make an account at twilio.com
 #free trial has enough texts
@@ -31,7 +31,6 @@ def login(url):
     try:
         button = browser.find_element(By.XPATH,"(//input[@alt='CWL Login'])[1]")
     except NoSuchElementException:
-        #print("Can't find Login button")
         return
     
     button.click()
@@ -60,16 +59,20 @@ def register():
 
 def confirm_and_text(class_):
 
-    #client = Client(twilio_account,twilio_token)
-
     try:
         browser.find_element(By.XPATH,"//*[contains(text(),'The section was added successfully')]")
-      #  client.messages.create(from_ = twilio_phone_number, body = "Successfully Registered in " + class_, to = your_phone_number)
         classes.remove(class_)
         print(f"Successfully registered in {class_}")
+
+        if twilio_token != "":
+            client = Client(twilio_account,twilio_token)
+            client.messages.create(from_ = twilio_phone_number, body = "Successfully Registered in " + class_, to = your_phone_number)
+
     except NoSuchElementException:
-      #  client.messages.create(from_ = twilio_phone_number, body = "Failed to register in " + class_, to = your_phone_number)
-      print(f"Failed to register in {class_}")
+        print(f"Failed to register in {class_}")
+        if twilio_token != "":
+            client.messages.create(from_ = twilio_phone_number, body = "Failed to register in " + class_, to = your_phone_number)
+
 
 i = 0
 while True:
